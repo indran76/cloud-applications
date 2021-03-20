@@ -16,8 +16,8 @@ before_script:
 script:
   - docker --version # print the version for logging
   - docker build -t simple-node .
-  - docker tag simple-node indran76/cloud_applications:simple-node.v1
+  - docker tag simple-node indran76/cloud-applications:simple-node.v1
 
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker push indran76/cloud_applications:simple-node.v1
+  - docker push indran76/cloud-applications:simple-node.v1
